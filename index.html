@@ -71,15 +71,15 @@
 <div id="screen-start" class="screen active">
   <div class="start-box">
     <img src="oshchadyk.png" alt="Ощадик" class="mascot-img-large" onerror="this.style.display='none';">
-    <h2>Привіт! Допоможи розібрати папери 💚</h2>
+    <h2>Вітаю у симуляторі кредитного архіву! </h2>
     <p style="font-size: 15px; margin-bottom: 20px;">Клієнт приніс купу документів. Нам треба швидко розкласти їх по правильних папках!</p>
     
     <div class="note">
-      <strong>📌 Як грати:</strong><br>
-      1️⃣ Натисни на документ у загальному списку.<br>
-      2️⃣ Натисни на папку, щоб покласти його туди.<br>
-      3️⃣ <em>Передумав?</em> Натисни <strong>двічі</strong> на документ у папці, щоб повернути його.<br><br>
-      ⚠️ <strong>Будь уважним:</strong> серед документів є зайві, їх місце у відповідній папці!
+      <strong>📌 Правила:</strong><br>
+      1️⃣ Натисніть на документ у загальному списку.<br>
+      2️⃣ Натисніть на папку, щоб покласти його туди.<br>
+      3️⃣ <em>Передумали?</em> Натисніть <strong>двічі</strong> на документ у папці, щоб повернути його.<br><br>
+      ⚠️ <strong>Будьте уважні:</strong> серед документів є зайві, їх місце у відповідній папці!
     </div>
     
     <p style="font-size: 16px;">
@@ -151,7 +151,7 @@
     { id: 'p7', title: 'Розрахунок фінансового стану', target: 'f_pos' },
     
     // ФІНАНСОВИЙ ПОРУЧИТЕЛЬ
-    { id: 'fp1', title: 'Заявка поручителя фін у форматі «xlsm»', target: 'f_por_fin' },
+    { id: 'fp1', title: 'Заявка поручителя фін. у форматі «xlsm»', target: 'f_por_fin' },
     { id: 'fp2', title: 'Паспорт/ID картка, РНОКПП (Фін. поручителя)', target: 'f_por_fin' },
     { id: 'fp3', title: 'Документи щодо сімейного стану (Фін. поручителя)', target: 'f_por_fin' },
     { id: 'fp4', title: 'Інформація про зобов’язання перед іншими фін. установами (Фін. поручителя)', target: 'f_por_fin' },
@@ -159,7 +159,7 @@
     { id: 'fp6', title: 'Дохід (Фін. поручителя)', target: 'f_por_fin' },
     
     // МАЙНОВИЙ ПОРУЧИТЕЛЬ
-    { id: 'mp1', title: 'Заявка поручителя майн у форматі «xlsm»', target: 'f_por_may' },
+    { id: 'mp1', title: 'Заявка поручителя майн. у форматі «xlsm»', target: 'f_por_may' },
     { id: 'mp2', title: 'Паспорт /ID картка, РНОКПП (Майнового поручителя)', target: 'f_por_may' },
     { id: 'mp3', title: 'Документи щодо сім. стану та дітей (Майнового поручителя)', target: 'f_por_may' },
     { id: 'mp4', title: 'Інформація про зобов’язання перед іншими фін. установами (Майнового поручителя)', target: 'f_por_may' },
@@ -288,12 +288,12 @@
     const retryBtn = document.getElementById('retry-btn');
     
     if (percent >= 80) {
-      titleEl.innerText = "Круто! Ти справжній профі! 🎉";
+      titleEl.innerText = "Круто! Ви справжній профі! 🎉";
       titleEl.className = "success-text";
       retryBtn.innerText = "Пройти ще раз";
       retryBtn.style.display = "inline-block";
     } else {
-      titleEl.innerText = "Не засмучуйся, спробуй ще раз! 💪";
+      titleEl.innerText = "Не засмучуйтесь, спробуте ще раз! 💪";
       titleEl.className = "fail-text";
       retryBtn.innerText = "Спробувати ще раз";
       retryBtn.style.display = "inline-block";

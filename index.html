@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Гра: Кредитний Архів Ощадбанку</title>
+<title>Симулятор документів клієнта</title>
 <style>
   body { font-family: 'Arial', sans-serif; background-color: #e8f5e9; padding: 10px; text-align: center; margin: 0; color: #333; }
   
@@ -74,7 +74,7 @@
       1. Оберіть документ у загальному списку, натиснувши на нього.<br>
       2. Натисніть на відповідну папку куди його розмістити.<br>
       3. <strong>Важливо!</strong> Для того, щоб повернути документ назад з папки, <strong>натисніть на нього двічі</strong>.<br>
-      4. Час на виконання: <strong>5 хвилин</strong>.<br>
+      4. Час на виконання: <strong>7 хвилин</strong>.<br>
       5. Прохідний бал: <strong>80%</strong>.
     </p>
     <button class="btn" onclick="startGame()">Розпочати тест</button>
@@ -87,8 +87,10 @@
       <img src="oshchadyk.png" alt="Ощадик" class="mascot-img-small" onerror="this.style.display='none';">
       <div><strong>Ощадик:</strong><br><span id="instruction-text">Оберіть документ натиснувши на нього.</span></div>
     </div>
-    <div class="timer" id="timer-display">05:00</div>
-  </div>
+    <div class="timer-container">
+  <span class="hourglass">⏳</span>
+  <div class="timer" id="timer-display">07:00</div>
+</div>
 
   <div class="doc-bank" id="doc-bank"></div>
 
@@ -138,7 +140,7 @@
     { id: 'p7', title: 'Розрахунок фінансового стану', target: 'f_pos' },
     
     // ФІНАНСОВИЙ ПОРУЧИТЕЛЬ
-    { id: 'fp1', title: 'Заявка поручителя у форматі «xlsm»', target: 'f_por_fin' },
+    { id: 'fp1', title: 'Заявка фін.поручителя у форматі «xlsm»', target: 'f_por_fin' },
     { id: 'fp2', title: 'Паспорт/ID картка, РНОКПП (Фін. поручителя)', target: 'f_por_fin' },
     { id: 'fp3', title: 'Документи щодо сімейного стану (Фін. поручителя)', target: 'f_por_fin' },
     { id: 'fp4', title: 'Інформація про зобов’язання перед іншими фін. установами (Фін. поручителя)', target: 'f_por_fin' },
@@ -146,7 +148,7 @@
     { id: 'fp6', title: 'Дохід (Фін. поручителя)', target: 'f_por_fin' },
     
     // МАЙНОВИЙ ПОРУЧИТЕЛЬ
-    { id: 'mp1', title: 'Заявка поручителя (майнового поручителя) у форматі «xlsm»', target: 'f_por_may' },
+    { id: 'mp1', title: 'Заявка майн.поручителя у форматі «xlsm»', target: 'f_por_may' },
     { id: 'mp2', title: 'Паспорт /ID картка, РНОКПП (Майнового поручителя)', target: 'f_por_may' },
     { id: 'mp3', title: 'Документи щодо сім. стану та дітей (Майнового поручителя)', target: 'f_por_may' },
     { id: 'mp4', title: 'Інформація про зобов’язання перед іншими фін. установами (Майнового поручителя)', target: 'f_por_may' },
@@ -164,7 +166,7 @@
   ];
 
   let selectedDocElement = null;
-  let timeLeft = 300; // 5 хвилин
+  let timeLeft = 420; // 7 хвилин
   let timerInterval;
   const totalDocs = documentData.length;
 
